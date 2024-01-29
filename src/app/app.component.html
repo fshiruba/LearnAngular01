@@ -1,0 +1,15 @@
+<app-header (onTabClicked)="this.currentTab=$event"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div [ngSwitch]="this.currentTab">
+        <div *ngSwitchCase="'list'">
+          <app-shopping-list></app-shopping-list>
+        </div>
+        <div *ngSwitchDefault>
+          <app-recipes ></app-recipes>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

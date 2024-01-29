@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-edit (onStateChanged)="stateChange($event)" [currentIngredient]="this.currentIngredient" ></app-shopping-edit>
+    <hr>
+    <ul class="list-group">
+      <a
+      class="list-group-item"
+      [style]="setStyle(ingredient==this.currentIngredient)"
+      (click)="ingredientSelected(i)"
+      *ngFor="let ingredient of ingredients;index as i;"
+      >
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </a>
+    </ul>
+  </div>
+</div>
